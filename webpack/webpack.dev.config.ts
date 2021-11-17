@@ -1,6 +1,7 @@
 import path from 'path';
 import { HotModuleReplacementPlugin } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 module.exports = require('./webpack.base.config')({
     mode: 'development',
@@ -18,6 +19,10 @@ module.exports = require('./webpack.base.config')({
     plugins: [
         new HtmlWebpackPlugin({
             template: 'src/index.html',
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css',
         }),
         new HotModuleReplacementPlugin(),
     ],

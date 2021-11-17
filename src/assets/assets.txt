@@ -1,0 +1,5 @@
+Assets will consist of all =>
+1. images
+2. videos
+3. fonts
+etc
