@@ -1,3 +1,4 @@
+import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
@@ -5,7 +6,7 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 module.exports = require('./webpack.base.config')({
     mode: 'production',
-    entry: './src/index.tsx',
+    entry: { app: path.join(process.cwd(), 'src/index.tsx') },
     output: {
         filename: '[name].[chunkhash].js',
         chunkFilename: '[name].[chunkhash].chunk.js',
