@@ -1,5 +1,4 @@
-import axios from 'axios';
-
+import {instance} from '../../config/api/apiConfig'
 export const dataAction = {
     getData,
 };
@@ -7,17 +6,17 @@ export const dataAction = {
 function getData() {
     return (dispatch: any) => {
         dispatch(request());
-        axios
-            .get('https://jsonplaceholder.typicode.com/posts')
-            .then((response) => {
-                if (response.status === 200) {
-                    dispatch(success(response.data));
-                }
-                dispatch(failure(response));
-            })
-            .catch((error) => {
-                dispatch(failure(error));
-            });
+        instance
+          .get("posts")
+          .then((response) => {
+            if (response.status === 200) {
+              dispatch(success(response.data));
+            }
+            dispatch(failure(response));
+          })
+          .catch((error) => {
+            dispatch(failure(error));
+          });
     };
     function request() {
         return { type: 'REQUEST_DATA' };

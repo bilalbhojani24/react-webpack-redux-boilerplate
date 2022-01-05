@@ -1,1 +1,0 @@
-This will coonsist of redux and state mgmt logic and files
