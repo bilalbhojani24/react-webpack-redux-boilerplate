@@ -28,7 +28,7 @@ module.exports = {
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/explicit-function-return-type': 'off',
-    'max-len': ['warn', { code: 80 }],
+    'max-len': ['off', { code: 80 }],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'import/prefer-default-export': 'off',
@@ -44,6 +44,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
+        paths: ['src'],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },

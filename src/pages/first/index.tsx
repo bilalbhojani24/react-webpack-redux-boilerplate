@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { dataAction } from '../../redux/action/data';
+import { dataAction } from 'redux/action/data';
 import './style.scss';
 
 const First = () => {

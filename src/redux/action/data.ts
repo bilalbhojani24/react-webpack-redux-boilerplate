@@ -1,4 +1,4 @@
-import { instance } from '../../config/api/apiConfig';
+import { instance } from 'config/api/apiConfig';
 
 function getData() {
   return (dispatch: any) => {
