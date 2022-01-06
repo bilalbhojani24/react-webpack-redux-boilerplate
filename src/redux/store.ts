@@ -1,6 +1,6 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
-import combineReducer from "./combineReducer";
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import combineReducer from './combineReducer';
 
 export default function configureStore() {
   const middleWares = [thunk];

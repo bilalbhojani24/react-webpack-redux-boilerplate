@@ -1,51 +1,52 @@
+import React from 'react';
 import loadable from '@loadable/component';
-import { useRoutes, Outlet } from "react-router-dom";
+import { useRoutes, Outlet } from 'react-router-dom';
+
 const FirstComponent = loadable(() => import('../pages/first'));
 const SecondComponent = loadable(() => import('../pages/second'));
 const ErrorPage = loadable(() => import('../pages/error'));
-const HomePage = loadable(() => import("../pages/homePage"));
+const HomePage = loadable(() => import('../pages/homePage'));
 
 export const Routes = () => {
   const routes = useRoutes([
     {
       element: <HomePage />,
-      path: "/",
+      path: '/',
     },
 
     {
       element: <Outlet />,
-      path: "customer",
+      path: 'customer',
       children: [
         {
           element: <SecondComponent />,
-          path: "second",
+          path: 'second',
         },
         {
           element: <FirstComponent />,
-          path: "first",
+          path: 'first',
         },
       ],
     },
     {
       element: <Outlet />,
-      path: "admin",
+      path: 'admin',
       children: [
         {
           element: <SecondComponent />,
-          path: "second",
+          path: 'second',
         },
         {
           element: <FirstComponent />,
-          path: "first",
+          path: 'first',
         },
       ],
     },
     {
       element: <ErrorPage />,
-      path: "*",
+      path: '*',
     },
   ]);
-  
-  return routes;
-} 
 
+  return routes;
+};
