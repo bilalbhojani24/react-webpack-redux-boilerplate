@@ -3,7 +3,13 @@ const initialState = {
   error: false,
   data: [],
 };
-const getUserReducer = (state = initialState, action: any) => {
+
+interface Action {
+  type: string,
+  payload : object
+}
+
+const getUserReducer = (state = initialState, action: Action) : object => {
   switch (action.type) {
     case 'REQUEST_DATA':
       return {
