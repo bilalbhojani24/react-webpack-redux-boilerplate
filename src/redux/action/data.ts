@@ -18,6 +18,7 @@ function getData() {
       .then((response) => {
         if (response.status === 200) {
           dispatch(success(response.data));
+          return;
         }
         dispatch(failure(response));
       })

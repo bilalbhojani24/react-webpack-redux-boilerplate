@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { dataAction } from 'redux/action/data';
 import './style.scss';
 
-const First = () => {
+const First : React.FC = () => {
   const dispatch = useDispatch();
   const data = useSelector<any>((state) => state.data);
   console.log(data);

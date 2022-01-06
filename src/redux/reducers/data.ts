@@ -10,7 +10,6 @@ interface Action {
 }
 
 const getUserReducer = (state = initialState, action: Action) => {
-  console.log(action);
   switch (action.type) {
     case 'REQUEST_DATA':
       return {
