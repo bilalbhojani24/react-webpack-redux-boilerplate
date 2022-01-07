@@ -1,18 +1,7 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { dataAction } from 'redux/action/data';
+import React from 'react';
+
 import './style.scss';
 
-const First : React.FC = () => {
-  const dispatch = useDispatch();
-  const data = useSelector<any>((state) => state.data);
-  console.log(data);
-
-  useEffect(() => {
-    dispatch(dataAction.getData());
-  }, []);
-
-  return <div className="first__view">I am the first page!!</div>;
-};
+const First : React.FC = () => <div className="first__view">I am the first page!!</div>;
 
 export default First;
