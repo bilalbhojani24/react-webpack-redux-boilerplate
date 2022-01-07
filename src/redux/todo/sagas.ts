@@ -1,13 +1,13 @@
-import axios from 'axios';
+import createAPI from 'config/api';
 import {
   all, call, put, takeLatest,
 } from 'redux-saga/effects';
 
 import { fetchTodoFailure, fetchTodoSuccess } from './action';
 import { FETCH_TODO_REQUEST } from './actionTypes';
-import { ITodo } from './types';
+// import { ITodo } from './types';
 
-const getTodos = () => axios.get<ITodo[]>('https://jsonplaceholder.typicode.com/todos');
+const getTodos = () => createAPI('post.getPost');
 
 function* fetchTodoSaga():any {
   try {
@@ -17,7 +17,7 @@ function* fetchTodoSaga():any {
         todos: response.data,
       }),
     );
-  } catch (e : any) {
+  } catch (e: any) {
     yield put(
       fetchTodoFailure({
         error: e.message,
