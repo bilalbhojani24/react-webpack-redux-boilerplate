@@ -9,10 +9,6 @@ import { ITodo } from './types';
 
 const getTodos = () => axios.get<ITodo[]>('https://jsonplaceholder.typicode.com/todos');
 
-/*
-  Worker Saga: Fired on FETCH_TODO_REQUEST action
-*/
-
 function* fetchTodoSaga():any {
   try {
     const response = yield call(getTodos);
@@ -30,10 +26,6 @@ function* fetchTodoSaga():any {
   }
 }
 
-/*
-  Starts worker saga on latest dispatched `FETCH_TODO_REQUEST` action.
-  Allows concurrent increments.
-*/
 function* todoSaga() {
   yield all([takeLatest(FETCH_TODO_REQUEST, fetchTodoSaga)]);
 }

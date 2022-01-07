@@ -1,13 +1,11 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import './style.scss';
+import WebviewInterface from 'helper/webViewInterface';
 
-const Second : React.FC = () => {
-  const params = useParams();
+interface Second {
+  interactWithNative : any
+}
 
-  console.log(params);
+const Second: React.FC<Second> = () => (<div className="first__view">I am the second page!!</div>);
 
-  return <div className="first__view">I am the second page!!</div>;
-};
-
-export default Second;
+export default WebviewInterface(Second);

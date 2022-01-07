@@ -5,12 +5,12 @@ import {
 
   getTodosSelector,
 } from 'redux/todo/selector';
-
 import { fetchTodoRequest } from 'redux/todo/action';
-
+import { isDev } from 'helper/utils/utilsFunctions';
 import './style.scss';
 
 const First: React.FC = () => {
+  console.log(isDev());
   const dispatch = useDispatch();
 
   const todosRedux = useSelector(getTodosSelector);
