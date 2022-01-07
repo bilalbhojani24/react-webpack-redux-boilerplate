@@ -10,6 +10,8 @@ const First : React.FC = () => {
 
   useEffect(() => {
     dispatch(dataAction.getData());
+    dispatch(dataAction.getData());
+    dispatch(dataAction.getData());
   }, []);
 
   return <div className="first__view">I am the first page!!</div>;
