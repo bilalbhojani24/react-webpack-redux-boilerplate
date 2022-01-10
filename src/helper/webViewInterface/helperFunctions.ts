@@ -1,6 +1,6 @@
-import { validateFunctionType } from './types';
+import { ValidateFunctionType } from './types';
 
-export const validateFunction = (payload: validateFunctionType) => {
+export const validateFunction = (payload: ValidateFunctionType) => {
   if (typeof payload.cb === 'function') {
     return payload.cb;
   }

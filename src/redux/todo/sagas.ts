@@ -1,4 +1,4 @@
-import createAPI from 'config/api';
+import createAPI from 'config/apiConfigs';
 import {
   all, call, put, takeLatest,
 } from 'redux-saga/effects';

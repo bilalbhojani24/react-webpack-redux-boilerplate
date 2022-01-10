@@ -1,6 +1,0 @@
-All contants =>
-
-1. API constants
-2. Web contants
-3. Error constants
-4. global contants

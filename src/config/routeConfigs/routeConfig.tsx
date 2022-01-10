@@ -2,10 +2,10 @@ import React from 'react';
 import loadable from '@loadable/component';
 import { useRoutes, Outlet } from 'react-router-dom';
 
-const FirstComponent = loadable(() => import('../pages/first'));
-const SecondComponent = loadable(() => import('../pages/second'));
-const ErrorPage = loadable(() => import('../pages/error'));
-const HomePage = loadable(() => import('../pages/homePage'));
+const FirstComponent = loadable(() => import('../../pages/first'));
+const SecondComponent = loadable(() => import('../../pages/second'));
+const ErrorPage = loadable(() => import('../../pages/error'));
+const HomePage = loadable(() => import('../../pages/homePage'));
 
 export const Routes = () => {
   const routes = useRoutes([

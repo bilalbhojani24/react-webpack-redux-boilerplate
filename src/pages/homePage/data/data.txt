@@ -1,0 +1,3 @@
+1. Textual data will be in this folder => data/index.ts
+2. Images will be in this folder => data/images/image_name.[extension]
+Note :- Try to use image as CDN

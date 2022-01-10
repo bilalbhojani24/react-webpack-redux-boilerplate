@@ -10,20 +10,21 @@ import { storeURLs } from './data';
 import './style.css';
 
 declare global {
-    interface Window {
+  interface Window {
         WebView:any;
     }
 }
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const WebviewInterface = (WrappedComponent: React.FunctionComponent<any>): any => {
   class WithWebviewInterface extends Component<Props, State> {
     errorMessages: {
-      ACTION_KEY_INPUT_ABSENT: string,
-      PLATFORM_NOT_NATIVE: string,
-      WEBVIEWINTERFACE_FUNCTION_ABSENT: string,
+      ACTION_KEY_INPUT_ABSENT: string;
+      PLATFORM_NOT_NATIVE: string;
+      WEBVIEWINTERFACE_FUNCTION_ABSENT: string;
     };
 
-    constructor(props : Props) {
+    constructor(props: Props) {
       super(props);
       this.errorMessages = {
         ACTION_KEY_INPUT_ABSENT: 'No Action Key present. Exiting the function call!',
@@ -32,7 +33,7 @@ const WebviewInterface = (WrappedComponent: React.FunctionComponent<any>): any =
       };
       this.interactWithNative = this.interactWithNative.bind(this);
       this.state = {
-        visible: false,
+        isVisible: false,
         errors: [],
         data: {},
         okText: 'OK',
@@ -45,7 +46,7 @@ const WebviewInterface = (WrappedComponent: React.FunctionComponent<any>): any =
       this.handleCancel();
     };
 
-    handleCancel = () => this.setState((prevState) => ({ visible: !prevState.visible, errors: [] }));
+    handleCancel = () => this.setState((prevState) => ({ isVisible: !prevState.isVisible, errors: [] }));
 
     // eslint-disable-next-line no-async-promise-executor
     interactWithNative = (actionKey: any, inputData = '') => new Promise(async (resolve, reject) => {
@@ -74,18 +75,18 @@ const WebviewInterface = (WrappedComponent: React.FunctionComponent<any>): any =
       }
     });
 
-    handleErrors = (errors : Array<string>, callback : any) => {
-      this.setState({ errors, visible: !!errors.length, okText: errors.includes(this.errorMessages.WEBVIEWINTERFACE_FUNCTION_ABSENT) ? 'Update Now' : 'OK' }, () => {
+    handleErrors = (errors: Array<string>, callback: any) => {
+      this.setState({ errors, isVisible: !!errors.length, okText: errors.includes(this.errorMessages.WEBVIEWINTERFACE_FUNCTION_ABSENT) ? 'Update Now' : 'OK' }, () => {
         console.error(`Errors encountered while invoking the interactWithNative:::${JSON.stringify(errors)}`);
         validateFunction(callback)();
       });
     };
 
     renderModal = () => {
-      const { visible, errors, okText } = this.state;
+      const { isVisible, errors, okText } = this.state;
       return (
-        visible && (
-          <Modal visible={visible}>
+        isVisible && (
+          <Modal visible={isVisible}>
             <div className="webkit-view-message">
               <h3>Update Symbo App</h3>
               <ul>{!!errors.length && errors.map((val) => <li key={`error-${Math.random()}`}>{val}</li>)}</ul>

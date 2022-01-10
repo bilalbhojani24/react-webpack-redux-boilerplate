@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-export interface validateFunctionType {
+export interface ValidateFunctionType {
   cb: any,
   logInCaseOfInvalid: boolean,
 }
@@ -10,9 +10,8 @@ export interface Props {
 }
 
 export interface State {
-  visible: boolean,
+  isVisible: boolean,
   errors: Array<string>,
   data: any,
-  okText : string
-
+  okText: string
 }

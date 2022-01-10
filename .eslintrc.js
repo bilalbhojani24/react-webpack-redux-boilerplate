@@ -65,6 +65,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/explicit-function-return-type': 'off',
