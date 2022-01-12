@@ -1,4 +1,3 @@
-
 export const checkStorage = (callback : () => any) => {
   if (typeof Storage !== 'undefined') {
     if (typeof callback === 'function') callback();
@@ -11,15 +10,14 @@ export const setToSessionStorage = (key: string, data : any) => {
   if (data) checkStorage(() => sessionStorage.setItem(key, btoa(JSON.stringify(data))));
 };
 
-export const setToSessionStoragePromise = (key : string, data : any, expiry : any) =>
-  new Promise((resolve, reject) => {
-    try {
-      setToSessionStorage(key, data);
-      resolve(true);
-    } catch (e) {
-      reject(e);
-    }
-  });
+export const setToSessionStoragePromise = (key : string, data : any) => new Promise((resolve, reject) => {
+  try {
+    setToSessionStorage(key, data);
+    resolve(true);
+  } catch (e) {
+    reject(e);
+  }
+});
 
 export const getFromSessionStorage = (key : string) => {
   let data = null;
@@ -34,14 +32,13 @@ export const getFromSessionStorage = (key : string) => {
   return data;
 };
 
-export const getFromSessionStoragePromise = (key : string) =>
-  new Promise((resolve, reject) => {
-    try {
-      resolve(getFromSessionStorage(key));
-    } catch (e) {
-      reject(e);
-    }
-  });
+export const getFromSessionStoragePromise = (key : string) => new Promise((resolve, reject) => {
+  try {
+    resolve(getFromSessionStorage(key));
+  } catch (e) {
+    reject(e);
+  }
+});
 
 export const deleteKeyFromSessionStorage = (key : string) => {
   if (key) {
@@ -49,13 +46,11 @@ export const deleteKeyFromSessionStorage = (key : string) => {
   }
 };
 
-export const deleteKeyFromSessionStoragePromise = (key : string) =>
-  new Promise((resolve, reject) => {
-    try {
-      deleteKeyFromSessionStorage(key);
-      resolve(true);
-    } catch (e) {
-      reject(e);
-    }
-  });
-
+export const deleteKeyFromSessionStoragePromise = (key : string) => new Promise((resolve, reject) => {
+  try {
+    deleteKeyFromSessionStorage(key);
+    resolve(true);
+  } catch (e) {
+    reject(e);
+  }
+});

@@ -1,5 +1,5 @@
 import { getFromLocalStorage } from 'helper/utils/utilsLocalStorage';
-import { currentApiUrlPrefix, currentEnvironmentConfig } from './environmentCOnfig';
+import { currentApiUrlPrefix, currentEnvironmentConfig } from './environmentConfig';
 import ApiConstants from './apiConstants';
 
 // Helper functions

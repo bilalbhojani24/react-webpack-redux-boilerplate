@@ -48,3 +48,19 @@ For reference :- Checkout root/redux/todo/sagas.ts [line - 10]
 1. fileName and folderName should be in camelCase format.
 2. For props using interface is must
 3. User React.FC for component archtecture
+
+
+## VS-Code Settings
+
+```
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
+}
+```

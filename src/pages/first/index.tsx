@@ -16,8 +16,13 @@ const First: React.FC = () => {
   const todosRedux = useSelector(getTodosSelector);
   const { pending, error, todos } = todosRedux;
 
+  const add = (num: number) => {
+    console.log(num + num);
+  };
+
   useEffect(() => {
     dispatch(fetchTodoRequest());
+    add(2);
   }, [dispatch]);
 
   return (

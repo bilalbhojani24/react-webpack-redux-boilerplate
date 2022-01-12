@@ -1,7 +1,7 @@
 import logo from 'loglevel';
 import prefix from 'loglevel-plugin-prefix';
 import dayjs from 'dayjs';
-import { currentEnvironmentConfig, logLevels } from 'config/apiConfigs/environmentCOnfig';
+import { currentEnvironmentConfig, logLevels } from 'config/apiConfigs/environmentConfig';
 const defaultLogLevel : any = currentEnvironmentConfig.logLevel || logLevels.INFO;
 const log = logo as any;
 
