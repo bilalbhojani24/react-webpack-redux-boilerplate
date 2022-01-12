@@ -15,17 +15,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react-jsx"
   },
-  "include": ["src"],
-  "exclude": [".eslintrc.js"],
-
-  "linters": {
-    "tsc": {
-      "type": "tsc",
-      // will call back linter just once, because we include just one file
-      // it could be any existing file in filesystem, it doesn't matter
-      "include": "/^linters\\/arc-tsclint\\/lint\\/linter\\/runner\\.js$/"
-    }
-  }
+  "include": ["src"]
 }
